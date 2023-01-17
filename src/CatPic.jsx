@@ -7,7 +7,8 @@ export default class CatPic extends Component {
 
     this.state = {
       imageUrl: 'https://media.tenor.com/RVvnVPK-6dcAAAAM/reload-cat.gif',
-      breedName: 'Fetching a cat for you...'
+      breedName: 'Fetching a cat for you...',
+      catExist: false
     }
 
     this.getCatData();
@@ -15,9 +16,13 @@ export default class CatPic extends Component {
   }
 
   handleClick = () => {
+    if (!this.state.catExist) {
+      return
+    }
     this.setState({
       imageUrl: 'https://media.tenor.com/RVvnVPK-6dcAAAAM/reload-cat.gif',
-      breedName: 'Fetching a cat for you...'
+      breedName: 'Fetching another cat for you...',
+      catExist: false
     }
     )
     this.getCatData()
@@ -27,6 +32,7 @@ export default class CatPic extends Component {
     const apiURL = 'https://api.thecatapi.com/v1/images/search?has_breeds=1'
     const apiKEY = '63b9a514-aad1-40fd-bb8c-d50b5ed28db3'
 
+
     fetch(apiURL, {
       headers: {
         'x-api-key': apiKEY
@@ -34,13 +40,11 @@ export default class CatPic extends Component {
     })
       .then((response) => { return response.json() })
       .then((data) => {
-        if (data[0]['height'] !== data[0]['width']) {
-          this.getCatData()
-          return
-        }
+
         this.setState({
           imageUrl: data[0]['url'],
           breedName: data[0]['breeds'][0]['name'],
+          catExist: true
         }
         )
       })
@@ -48,7 +52,8 @@ export default class CatPic extends Component {
         alert('Timeout, try again after a few seconds!')
         this.setState({
           imageUrl: "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/2/2022/05/cat-yawning-other-cats.jpg",
-          breedName: "Try after a few seconds"
+          breedName: "Try after a few seconds",
+          catExist: false
         })
       }) //implement error later
   }
