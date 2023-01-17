@@ -6,7 +6,7 @@ export default class CatPic extends Component {
 
     this.state = {
       imageUrl: 'https://media.tenor.com/RVvnVPK-6dcAAAAM/reload-cat.gif',
-      breedName: 'Image is loading'
+      breedName: 'Fetching a cat for you...'
     }
 
     this.getData();
@@ -40,8 +40,7 @@ export default class CatPic extends Component {
   render() {
     return (
       <>
-        <img src={this.state.imageUrl} alt={`A ${this.state.breedName}`} className="cat"
-        />
+        <img src={this.state.imageUrl} alt={`A ${this.state.breedName}`} className="cat" />
         <h2 className='breedName'>{this.state.breedName}</h2>
       </>
     )
