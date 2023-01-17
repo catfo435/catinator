@@ -30,8 +30,8 @@ export default class CatPic extends Component {
 
   getCatData() {
     const apiURL = 'https://api.thecatapi.com/v1/images/search?has_breeds=1'
-    const apiKEY = process.env.CAT_API_TOKEN
-
+    const apiKEY = process.env.REACT_APP_CAT
+    console.log(apiKEY);
 
     fetch(apiURL, {
       headers: {
@@ -48,8 +48,9 @@ export default class CatPic extends Component {
         }
         )
       })
-      .catch(() => {
+      .catch((e) => {
         alert('Timeout, try again after a few seconds!')
+        console.log(e);
         this.setState({
           imageUrl: "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/2/2022/05/cat-yawning-other-cats.jpg",
           breedName: "Try after a few seconds",
