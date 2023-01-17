@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom/client'
 import "./index.css"
 
 import CatPic from './CatPic'
+import Header from './Header'
 
 export default function CatPage() {
   return (
-    <CatPic />
+    <>
+      <Header />
+      <CatPic />
+    </>
   )
 }
 
