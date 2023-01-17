@@ -30,7 +30,7 @@ export default class CatPic extends Component {
 
   getCatData() {
     const apiURL = 'https://api.thecatapi.com/v1/images/search?has_breeds=1'
-    const apiKEY = process.CAT_API_TOKEN
+    const apiKEY = process.env.CAT_API_TOKEN
 
 
     fetch(apiURL, {
