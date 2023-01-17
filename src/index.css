@@ -48,6 +48,7 @@ button:hover{
 
   #root hr{
     width: 100vmin;
+    max-width: -webkit-fill-available;
     height: 2px;
     background-color: yellow;
     margin-bottom: 2vh;
