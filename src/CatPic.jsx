@@ -54,7 +54,7 @@ export default class CatPic extends Component {
         this.setState({
           imageUrl: "https://cdn-prd.content.metamorphosis.com/wp-content/uploads/sites/2/2022/05/cat-yawning-other-cats.jpg",
           breedName: "Try after a few seconds",
-          catExist: false
+          catExist: true
         })
       }) //implement error later
   }
