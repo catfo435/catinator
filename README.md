@@ -1,7 +1,7 @@
 # Catinator - A random cat pic generator using React and TheCatAPI
 
 ### What does it do?
-*It fetches random cat pics using the [API](https://thecatapi.com/){:target="_blank"} and displays them on the webpage
+*It fetches random cat pics using the [API](https://thecatapi.com/) and displays them on the webpage
 You can request for how many ever cat pics you want. It shows the cat's breed too!*
 
 Tasks to do:
