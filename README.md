@@ -5,6 +5,7 @@
 You can request for how many ever cat pics you want. It shows the cat's breed too!*
 
 Tasks to do:
+- [ ] Migrate to TypeScript
 - [ ] Footer with Link to source code(github)
 - [ ] Match the resolution of the pic with circle
 - [ ] Better color scheme and CSS
